@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فيرو ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            #57183e 0%,
+            #260b1d 35%,
+            #0d040b 70%,
+            #030105 100%
+        );
+    color: white;
+    overflow: hidden;
+}
+
+#background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -80px;
+    color: #ff4fa3;
+    font-size: 25px;
+    filter:
+        drop-shadow(0 0 8px #ff3f98)
+        drop-shadow(0 0 15px #ff3f98);
+    animation: floatHeart linear infinite;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(.6);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .9;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(20deg) scale(1);
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(-20deg) scale(.6);
+        opacity: 0;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow:
+        0 0 8px white,
+        0 0 15px white;
+    animation: starGlow 2s infinite alternate;
+}
+
+@keyframes starGlow {
+    from {
+        opacity: .15;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#backgroundMusic {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    left: -10px;
+    bottom: -10px;
+    opacity: .01;
+    pointer-events: none;
+    z-index: -10;
+}
+
+#backgroundMusic iframe {
+    width: 1px;
+    height: 1px;
+    border: none;
+}
+
+.page {
+    position: absolute;
+    inset: 0;
+    min-height: 100vh;
+    padding: 25px 15px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(60px) scale(.96);
+    pointer-events: none;
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+.card {
+    width: min(92vw, 540px);
+    max-height: 88vh;
+    padding: 30px 23px;
+    border-radius: 30px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(45, 8, 30, .96),
+            rgba(12, 3, 10, .97)
+        );
+    border:
+        1px solid
+        rgba(255, 100, 180, .65);
+    box-shadow:
+        0 0 40px rgba(255, 40, 150, .30),
+        0 0 90px rgba(255, 40, 150, .10),
+        inset 0 0 30px rgba(255, 80, 170, .07);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    overflow-y: auto;
+}
+
+.card::-webkit-scrollbar {
+    width: 0;
+}
+
+h1 {
+    color: #ff72b5;
+    font-size: clamp(30px, 8vw, 46px);
+    text-shadow:
+        0 0 20px #ff3e99,
+        0 0 40px rgba(255,50,150,.4);
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #ff9ac9;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #ffffff;
+    line-height: 2.1;
+    font-size: 17px;
+    margin: 10px 0;
+    text-shadow:
+        0 1px 8px rgba(255,255,255,.12);
+}
+
+button {
+    font-family: "Cairo", sans-serif;
+}
+
+.btn {
+    border: none;
+    color: white;
+    background:
+        linear-gradient(
+            90deg,
+            #d92878,
+            #ff5baa
+        );
+    padding: 13px 28px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow:
+        0 0 20px rgba(255,50,150,.45),
+        0 0 40px rgba(255,50,150,.15);
+    transition: .25s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.06);
+}
+
+.secondary {
+    background: rgba(255,255,255,.12);
+    margin-right: 5px;
+}
+
+.big-heart {
+    font-size: 75px;
+    animation: beat 1.5s infinite;
+    filter: drop-shadow(0 0 20px #ff3e98);
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.yoyo {
+    font-size: 50px;
+    font-weight: 800;
+    color: #ff73b6;
+    text-shadow:
+        0 0 20px #ff3d99,
+        0 0 40px rgba(255,50,150,.4);
+}
+
+.password-box {
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 17px;
+    border: 1px solid #ff62ac;
+    background: rgba(0,0,0,.45);
+    color: white;
+    outline: none;
+    text-align: center;
+    font-size: 17px;
+    font-family: "Cairo";
+    box-shadow:
+        inset 0 0 15px
+        rgba(255,50,150,.08);
+}
+
+input::placeholder {
+    color: #d59ab9;
+}
+
+.error {
+    color: #ff86b7;
+    min-height: 28px;
+    margin-top: 7px;
+}
+
+.typewriter {
+    text-align: right;
+    line-height: 2.2;
+    min-height: 170px;
+    white-space: pre-wrap;
+    color: #ffffff;
+    border-right: 2px solid #ff68ad;
+    padding-right: 14px;
+    animation: cursor .8s infinite;
+    text-shadow:
+        0 1px 8px
+        rgba(255,255,255,.12);
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.timeline {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.event {
+    border-right: 3px solid #ff5ca7;
+    padding: 10px 16px;
+    margin: 18px 0;
+    background: rgba(255,80,160,.08);
+    border-radius: 0 15px 15px 0;
+    box-shadow:
+        0 0 15px
+        rgba(255,40,150,.05);
+}
+
+.event strong {
+    color: #ff86bd;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.time {
+    padding: 13px 5px;
+    border-radius: 17px;
+    border: 1px solid rgba(255,100,180,.6);
+    background: rgba(255,70,150,.08);
+}
+
+.time b {
+    display: block;
+    color: white;
+    font-size: 27px;
+}
+
+.time span {
+    font-size: 11px;
+    color: #ffafd1;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.memory {
+    padding: 18px 8px;
+    border-radius: 20px;
+    background: rgba(255,80,160,.09);
+    border: 1px solid rgba(255,130,195,.35);
+    transition: .25s;
+}
+
+.memory:hover {
+    transform: translateY(-5px);
+    background: rgba(255,80,160,.18);
+}
+
+.memory-icon {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.music-message {
+    padding: 30px 15px;
+    border-radius: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,50,150,.12),
+            rgba(0,0,0,.3)
+        );
+    border: 1px solid rgba(255,100,180,.4);
+}
+
+.music-note {
+    font-size: 70px;
+    animation: musicBeat 1s infinite;
+}
+
+@keyframes musicBeat {
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.navigation {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 100;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #70294f;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #ff70b5;
+    box-shadow: 0 0 12px #ff50a5;
+}
+
+.footer {
+    color: #ff9bc9;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.contact-btn {
+    width: 100%;
+    margin-top: 0;
+}
+
+.contact-icon {
+    font-size: 22px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@media(max-width:420px) {
+    .card {
+        padding: 25px 17px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .typewriter {
+        font-size: 15px;
+    }
+
+    .time b {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="background"></div>
+
+<div id="backgroundMusic">
+    <iframe
+        id="musicFrame"
+        src="https://www.youtube.com/embed/CCRxEbi75iE?rel=0&enablejsapi=1"
+        allow="autoplay">
+    </iframe>
+</div>
+
+<!-- الصفحة 1 -->
+<section class="page active" id="page1">
+    <div class="card">
+
+        <div class="big-heart">
+            💗
+        </div>
+
+        <h1>
+            مرحباً بيكي
+        </h1>
+
+        <p>
+            🔐 ادخلي كلمة السر عشان تدخلي عالمنا الصغير
+        </p>
+
+        <div class="password-box">
+
+            <input
+                id="password"
+                type="text"
+                placeholder="Password">
+
+            <div
+                class="error"
+                id="error">
+            </div>
+
+            <button
+                class="btn"
+                onclick="unlock()">
+
+                💗 دخول 💗
+
+            </button>
+
+        </div>
+
+        <p
+            style="
+            font-size:13px;
+            color:#dba1bd;
+            ">
+
+            دي مش مجرد صفحة...
+            دي بداية حكاية حلوة 💕
+
+        </p>
+
+    </div>
+</section>
+
+<!-- الصفحة 2 -->
+<section class="page" id="page2">
+    <div class="card">
+
+        <div class="yoyo">
+            💗 فيرو 💗
+        </div>
+
+        <div
+            class="typewriter"
+            id="welcomeText">
+        </div>
+
+        <button
+            class="btn"
+            onclick="goTo(3)">
+
+            ابدأ الرحلة 💕
+
+        </button>
+
+    </div>
+</section>
+
+<!-- الصفحة 3 -->
+<section class="page" id="page3">
+    <div class="card">
+
+        <h1>
+            💌 رسائل الحب
+        </h1>
+
+        <div
+            class="typewriter"
+            id="letterText">
+        </div>
+
+        <button
+            class="btn"
+            onclick="nextLetter()">
+
+            💗 رسالة تانية
+
+        </button>
+
+        <button
+            class="btn secondary"
+            onclick="goTo(4)">
+
+            التالي 💕
+
+        </button>
+
+    </div>
+</section>
+
+<!-- الصفحة 4 -->
+<section class="page" id="page4">
+    <div class="card">
+
+        <h1>
+            💗 بدايتنا
+        </h1>
+
+        <div class="timeline">
+
+            <div class="event">
+
+                <strong>
+                    📅 15 / 8 / 2026
+                </strong>
+
+                <br><br>
+
+                أول يوم كلمتها فيه ❤️
+
+                <br>
+
+                اليوم اللي بدأ فيه الكلام
+                اللي مكنتش أعرف إنه هيبقى
+                بداية لكل الذكريات دي.
+
+            </div>
+
+            <div class="event">
+
+                <strong>
+                    💬 أول كلام
+                </strong>
+
+                <br><br>
+
+                من أول محادثة بسيطة،
+                كل مرة كنا بنتكلم فيها
+                كانت بتخلي وجودك أغلى عندي.
+
+            </div>
+
+            <div class="event">
+
+                <strong>
+                    ✨ ومن يومها...
+                </strong>
+
+                <br><br>
+
+                كل يوم بيعدي بيضيف
+                ذكرى جديدة للحكاية. 💗
+
+            </div>
+
+        </div>
+
+        <button
+            class="btn"
+            onclick="goTo(5)">
+
+            التالي ❤️
+
+        </button>
+
+    </div>
+</section>
+
+<!-- الصفحة 5 -->
+<section class="page" id="page5">
+    <div class="card">
+
+        <h1>
+            💕 العداد
+        </h1>
+
+        <p>
+            من أول يوم كلمتها فيه
+        </p>
+
+        <p>
+            📅 15 / 8 / 2026
+        </p>
+
+        <div class="counter">
+
+            <div class="time">
+                <b id="days">0</b>
+                <span>يوم</span>
+            </div>
+
+            <div class="time">
+                <b id="hours">0</b>
+                <span>ساعة</span>
+            </div>
+
+            <div class="time">
+                <b id="minutes">0</b>
+                <span>دقيقة</span>
+            </div>
+
+            <div class="time">
+                <b id="seconds">0</b>
+                <span>ثانية</span>
+            </div>
+
+        </div>
+
+        <p>
+            كل ثانية بتعدي وإنتِ ليكي
+            مكان مميز في الحكاية دي ❤️
+        </p>
+
+        <button
+            class="btn"
+            onclick="goTo(6)">
+
+            الأغنية 🎵
+
+        </button>
+
+    </div>
+</section>
+
+<!-- الصفحة 6 -->
+<section class="page" id="page6">
+    <div class="card">
+
+        <div class="music-message">
+
+            <div class="music-note">
+                🎵
+            </div>
+
+            <h1>
+                أغنيتنا ❤️
+            </h1>
+
+            <p>
+                الأغنية دي هتفضل شغالة
+                معانا في الخلفية 🎧
+            </p>
+
+            <p>
+                كل ما تسمعيها،
+                افتكري إن الصفحة دي
+                معمولة مخصوص عشانك. 💗
+            </p>
+
+            <p>
+                🎶❤️🎶❤️🎶
+            </p>
+
+        </div>
+
+        <button
+            class="btn"
+            onclick="goTo(7)">
+
+            ذكرياتنا 📸
+
+        </button>
+
+    </div>
+</section>
+
+<!-- الصفحة 7 -->
+<section class="page" id="page7">
+    <div class="card">
+
+        <h1>
+            💗 ذكرياتنا
+        </h1>
+
+        <div class="memory-grid">
+
+            <div class="memory">
+
+                <div class="memory-icon">
+                    💬
+                </div>
+
+                <b>
+                    أول محادثة
+                </b>
+
+                <br>
+
+                <small>
+                    15 / 8 / 2026
+                </small>
+
+            </div>
+
+            <div class="memory">
+
+                <div class="memory-icon">
+                    🥰
+                </div>
+
+                <b>
+                    أحلى ضحكة
+                </b>
+
+                <br>
+
+                <small>
+                    دايمًا
+                </small>
+
+            </div>
+
+            <div class="memory">
+
+                <div class="memory-icon">
+                    🎮
+                </div>
+
+                <b>
+                    أوقاتنا الحلوة
+                </b>
+
+                <br>
+
+                <small>
+                    ذكرياتنا
+                </small>
+
+            </div>
+
+            <div class="memory">
+
+                <div class="memory-icon">
+                    📸
+                </div>
+
+                <b>
+                    لحظات جميلة
+                </b>
+
+                <br>
+
+                <small>
+                    قريبًا...
+                </small>
+
+            </div>
+
+            <div class="memory">
+
+                <div class="memory-icon">
+                    ♾️
+                </div>
+
+                <b>
+                    واللي جاي أحلى
+                </b>
+
+                <br>
+
+                <small>
+                    لسه في ذكريات كتير
+                </small>
+
+            </div>
+
+        </div>
+
+        <p>
+            كل ذكرى معاكي ليها
+            مكان خاص عندي. 💕
+        </p>
+
+        <button
+            class="btn"
+            onclick="goTo(8)">
+
+            آخر صفحة 💗
+
+        </button>
+
+    </div>
+</section>
+
+<!-- الصفحة 8 -->
+<section class="page" id="page8">
+    <div class="card">
+
+        <div class="big-heart">
+            💗
+        </div>
+
+        <h1>
+            إلى فيرو...
+        </h1>
+
+        <div
+            class="typewriter"
+            id="finalText">
+        </div>
+
+        <button
+            class="btn"
+            onclick="goTo(9)">
+
+            💗 أنا موجود هنا
+
+        </button>
+
+        <button
+            class="btn secondary"
+            onclick="goTo(1)">
+
+            🔄 نبدأ من الأول
+
+        </button>
+
+        <div class="footer">
+            Made with love for Fero ❤️
+        </div>
+
+    </div>
+</section>
+
+<!-- الصفحة 9 -->
+<section class="page" id="page9">
+    <div class="card">
+
+        <div class="big-heart">
+            💗
+        </div>
+
+        <h1>
+            💗 أنا موجود هنا... وفي كل حتة 💗
+        </h1>
+
+        <p>
+            لو عايزاني، هتلاقيني موجود. ❤️
+            <br>
+            ودي كل الطرق اللي تقدري توصليلي بيها. 💌
+        </p>
+
+        <div class="contact-box">
+
+            <a
+                class="btn contact-btn"
+                href="tel:01554917713">
+
+                <span class="contact-icon">
+                    📱
+                </span>
+
+                01554917713
+
+            </a>
+
+            <a
+                class="btn contact-btn"
+                href="tel:01508325513">
+
+                <span class="contact-icon">
+                    📱
+                </span>
+
+                01508325513
+
+            </a>
+
+            <a
+                class="btn contact-btn"
+                href="https://www.instagram.com/youssef____18000/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <span class="contact-icon">
+                    📸
+                </span>
+
+                Instagram — youssef____18000
+
+            </a>
+
+            <a
+                class="btn contact-btn"
+                href="https://www.tiktok.com/@youssef__joo33"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <span class="contact-icon">
+                    🎵
+                </span>
+
+                TikTok — youssef__joo33
+
+            </a>
+
+        </div>
+
+        <button
+            class="btn secondary"
+            onclick="goTo(8)">
+
+            💌 رجوع
+
+        </button>
+
+        <div class="footer">
+            Made with love for Fero ❤️
+        </div>
+
+    </div>
+</section>
+
+<div
+    class="navigation"
+    id="navigation">
+</div>
+
+<script>
+
+function unlock() {
+
+    const password =
+        document
+        .getElementById("password")
+        .value
+        .trim();
+
+    if (password === "2013/4/2") {
+
+        document
+        .getElementById("error")
+        .textContent = "";
+
+        const music =
+            document
+            .getElementById("musicFrame");
+
+        music.src =
+            "https://www.youtube.com/embed/CCRxEbi75iE?rel=0&enablejsapi=1&autoplay=1&loop=1&playlist=CCRxEbi75iE";
+
+        goTo(2);
+
+    } else {
+
+        document
+        .getElementById("error")
+        .textContent =
+            "كلمة السر مش صح 💔";
+    }
+}
+
+document
+.getElementById("password")
+.addEventListener(
+    "keydown",
+    function(e) {
+
+        if (e.key === "Enter") {
+            unlock();
+        }
+
+    }
+);
+
+let currentPage = 1;
+
+const pages =
+    document.querySelectorAll(".page");
+
+function goTo(number) {
+
+    pages.forEach(
+        function(page) {
+            page.classList.remove("active");
+        }
+    );
+
+    document
+        .getElementById("page" + number)
+        .classList
+        .add("active");
+
+    currentPage = number;
+
+    updateNavigation();
+
+    if (number === 2) {
+
+        typeText(
+            document
+            .getElementById("welcomeText"),
+
+`أهلًا بيكي يا فيرو... 💗
+
+إنتِ مش مجرد شخص في حياتي،
+إنتِ أجمل صدفة وأحلى حكاية.
+
+من يوم ما بدأ كلامنا،
+كل يوم بقى فيه سبب جديد يخليني أبتسم.
+
+الرحلة دي معمولة مخصوص عشانك... ❤️
+
+فخليكي معايا للنهاية،
+لأن لسه في كلام كتير نفسي أقولهولك. 💕`
+        );
+    }
+
+    if (number === 3) {
+
+        letterIndex = 0;
+
+        typeText(
+            document
+            .getElementById("letterText"),
+            letters[0]
+        );
+    }
+
+    if (number === 8) {
+
+        typeText(
+            document
+            .getElementById("finalText"),
+
+`مهما كتبت ومهما قلت،
+هيفضل جوايا كلام كتير مش عارف أوصفه.
+
+وجودك في حياتي خلّى أيامي أحلى،
+وخلى حاجات بسيطة يبقى ليها معنى أكبر.
+
+من يوم 2026/8/15،
+اليوم اللي بدأ فيه كلامنا،
+وكل لحظة بعده بقت جزء من الحكاية. ❤️
+
+يا فيرو،
+إنتِ من أجمل الحاجات اللي حصلتلي.
+
+ضحكتك،
+كلامك،
+وجودك،
+وكل التفاصيل الصغيرة اللي بتخصك،
+كلها حاجات ليها مكان خاص عندي. 💗
+
+وأيًا كان اللي جاي،
+أتمنى تفضل ذكرياتنا دايمًا حلوة.
+
+ودايـمًا هتفضل ليكي
+مكانة مميزة عندي. 💕
+
+النهاية؟...
+لا، دي مجرد بداية لحاجات أحلى. ♾️❤️`
+        );
+    }
+}
+
+let typingInterval;
+
+function typeText(
+    element,
+    text,
+    speed = 25
+) {
+
+    clearInterval(typingInterval);
+
+    element.textContent = "";
+
+    let index = 0;
+
+    typingInterval =
+        setInterval(
+            function() {
+
+                element.textContent +=
+                    text[index];
+
+                index++;
+
+                if (index >= text.length) {
+
+                    clearInterval(
+                        typingInterval
+                    );
+                }
+
+            },
+            speed
+        );
+}
+
+const letters = [
+
+`يا فيرو، إنتِ مش قمر،
+إنتِ الحاجة اللي بتخلي القمر نفسه شكله عادي. 🌙
+
+يا فيرو، إنتِ مل
